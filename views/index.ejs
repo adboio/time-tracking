@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <head>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 	<link href="https://fonts.googleapis.com/css2?family=Kufam:wght@400;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 	<link rel="stylesheet" href="/stylesheets/style.css">
@@ -11,12 +12,13 @@
 			<div class="row text-center">
 				<div class="col-12">
 					<!-- <h3>current task:</h3> -->
-					<img class="img-fluid activity-img" src="/images/<%= data.currentEvent.activity %>.png">
+					<img id="currentActivityImage" class="img-fluid activity-img" src="/images/<%= data.currentEvent.activity %>.png">
 					<!-- <h1><%= data.currentEvent.activity %></h1> -->
-					<h3><i class="fas fa-stopwatch"></i> <%= data.duration %></h3>
+					<h3><i class="fas fa-stopwatch"></i> <span id="currentActivityDuration"><%= data.duration %></span></h3>
 				</div>
 			</div>
 		</div>
 	</div>
+	<input type="hidden" id="currentActivity" value="<%= data.currentEvent.activity %>">
 </body>
 
