@@ -43,15 +43,6 @@ function update() {
 					$('#isEventDiv').show();
 					$('#noEventDiv').hide();
 
-				// if we are trasitioning from something to nothing
-				} else if (newActivity == 'none' && oldActivity != 'none') {
-
-					setHiddenInput('none');
-
-					// hide & show divs
-					$('#isEventDiv').hide();
-					$('#noEventDiv').show();
-
 				// if we are transitioning from one event to another
 				} else {
 
@@ -60,6 +51,15 @@ function update() {
 					setHiddenInput(res.data.currentEvent.activity);
 
 				}
+
+			// if we are trasitioning from something to nothing
+			} else {
+
+				setHiddenInput('none');
+
+				// hide & show divs
+				$('#isEventDiv').hide();
+				$('#noEventDiv').show();
 
 			}
 
