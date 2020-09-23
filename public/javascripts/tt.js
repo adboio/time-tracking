@@ -36,7 +36,7 @@ function update() {
 				} else if (oldActivity == 'none' && newActivity != 'none') {
 
 					setImage(res.data.currentEvent.activity);
-					setDuration(res.data.currentEvent.activity);
+					setDuration(res.data.duration);
 					setHiddenInput(res.data.currentEvent.activity);
 
 					// hide & show divs
@@ -47,7 +47,7 @@ function update() {
 				} else {
 
 					setImage(res.data.currentEvent.activity);
-					setDuration(res.data.currentEvent.activity);
+					setDuration(res.data.duration);
 					setHiddenInput(res.data.currentEvent.activity);
 
 				}
