@@ -7,7 +7,7 @@ function getHiddenInput() {
 }
 
 function setHiddenInput(activity) {
-	$('#currentActivity').val(res.data.currentEvent.activity);	
+	$('#currentActivity').val(activity);	
 }
 
 function setDuration(duration) {
