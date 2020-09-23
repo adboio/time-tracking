@@ -5,13 +5,15 @@
 	<script src="https://kit.fontawesome.com/9c5bd481b0.js" crossorigin="anonymous"></script>
 </head>
 <body>
-	<div class="container h-100">
-		<div class="row text-center h-100">
-			<div class="col-12 my-auto">
-				<h3>current task:</h3>
-				<img class="activity-img" src="/images/<%= data.currentEvent.activity %>.png">
-				<!-- <h1><%= data.currentEvent.activity %></h1> -->
-				<h3><i class="fas fa-stopwatch"></i> <%= data.duration %></h3>
+	<div class="wrapper vertical-center">
+		<div class="container">
+			<div class="row text-center">
+				<div class="col-12">
+					<h3>current task:</h3>
+					<img class="activity-img" src="/images/<%= data.currentEvent.activity %>.png">
+					<!-- <h1><%= data.currentEvent.activity %></h1> -->
+					<h3><i class="fas fa-stopwatch"></i> <%= data.duration %></h3>
+				</div>
 			</div>
 		</div>
 	</div>
