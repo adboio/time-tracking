@@ -4,3 +4,7 @@
 	display: flex;
 	align-items: center;
 }
+
+.activity-img {
+	max-width: 500px;
+}
