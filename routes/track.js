@@ -34,16 +34,13 @@ function addEvent(connection, activity, type) {
 
 /* POST activity tracker */
 router.post('/:activity', authHandler.checkApiKey, function(req, res, next) {
-
 	var connection = mysql.createConnection({
 		host: dbHost,
 		user: dbUser,
 		password: dbPass,
 		database: dbName
 	});
-
 	let activity = req.params.activity;
-
 	getLastEventOfActivity(connection, activity)
 	.then((event) => addEvent(connection, activity, (event ? !event.type : EVENT_START)))
 	.then(() => {
