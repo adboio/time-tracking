@@ -40,8 +40,8 @@ function update() {
 					setHiddenInput(res.data.currentEvent.activity);
 
 					// hide & show divs
-					$('#isEventDiv').show();
-					$('#noEventDiv').hide();
+					$('#isEventDiv').hide();
+					$('#noEventDiv').show();
 
 				// if we are transitioning from one event to another
 				} else {
