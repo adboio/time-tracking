@@ -11,15 +11,21 @@
 		<div class="container">
 			<div class="row text-center">
 				<div class="col-12">
-					<!-- <h3>current task:</h3> -->
-					<img id="currentActivityImage" class="img-fluid activity-img" src="/images/<%= data.currentEvent.activity %>.png">
-					<!-- <h1><%= data.currentEvent.activity %></h1> -->
-					<h3><i class="fas fa-stopwatch"></i> <span id="currentActivityDuration"><%= data.duration %></span></h3>
+
+					<div id="isEventDiv" style="display: none;">
+						<img id="currentActivityImage" class="img-fluid activity-img" src="">
+						<h3><i class="fas fa-stopwatch"></i> <span id="currentActivityDuration"></span></h3>
+					</div>
+
+					<div id="noEventDiv">
+						<h3>no event is currently being tracked</h3>
+					</div>
+
 				</div>
 			</div>
 		</div>
 	</div>
-	<input type="hidden" id="currentActivity" value="<%= data.currentEvent.activity %>">
+	<input type="hidden" id="currentActivity" value="none">
 	<script src="/javascripts/tt.js"></script>
 </body>
 

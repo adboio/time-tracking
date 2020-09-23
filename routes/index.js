@@ -43,18 +43,27 @@ router.get('/update', function(req, res, next) {
 		database: dbName
 	});
 
-	let ret = {};
+	let ret = {isEvent: true};
 
 	getCurrentEvent(connection)
 	.then((event) => {
-		ret.currentEvent = event;
-		getDuration(connection, event)
-		.then((duration) => {
-			ret.duration = duration;
+
+		if (event) {
+			ret.currentEvent = event;
+			getDuration(connection, event)
+			.then((duration) => {
+				ret.duration = duration;
+				connection.end(function() {
+					return res.send({data: ret});
+				});
+			})
+		} else {
+			ret.isEvent = false;
 			connection.end(function() {
 				return res.send({data: ret});
 			});
-		})
+		}
+
 	})
 	.catch((err) => {
 		console.log(err);
@@ -67,32 +76,35 @@ router.get('/update', function(req, res, next) {
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-	var connection = mysql.createConnection({
-		host: dbHost,
-		user: dbUser,
-		password: dbPass,
-		database: dbName
-	});
 
-	let ret = {};
+	return res.render('index');
 
-	getCurrentEvent(connection)
-	.then((event) => {
-		ret.currentEvent = event;
-		getDuration(connection, event)
-		.then((duration) => {
-			ret.duration = duration;
-			connection.end(function() {
-				return res.render('index', {data: ret});
-			});
-		})
-	})
-	.catch((err) => {
-		console.log(err);
-		connection.end(function() {
-			return next();
-		});
-	});
+	// var connection = mysql.createConnection({
+	// 	host: dbHost,
+	// 	user: dbUser,
+	// 	password: dbPass,
+	// 	database: dbName
+	// });
+
+	// let ret = {};
+
+	// getCurrentEvent(connection)
+	// .then((event) => {
+	// 	ret.currentEvent = event;
+	// 	getDuration(connection, event)
+	// 	.then((duration) => {
+	// 		ret.duration = duration;
+	// 		connection.end(function() {
+	// 			return res.render('index', {data: ret});
+	// 		});
+	// 	})
+	// })
+	// .catch((err) => {
+	// 	console.log(err);
+	// 	connection.end(function() {
+	// 		return next();
+	// 	});
+	// });
 
 });
 
