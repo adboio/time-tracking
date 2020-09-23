@@ -32,7 +32,7 @@ function addEvent(connection, activity, type) {
 	});
 }
 
-/* GET home page. */
+/* POST activity tracker */
 router.post('/:activity', authHandler.checkApiKey, function(req, res, next) {
 
 	var connection = mysql.createConnection({
