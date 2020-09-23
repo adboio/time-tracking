@@ -33,7 +33,7 @@ function update() {
 					setDuration(res.data.duration);
 
 				// if we are transitioning from nothing to something
-				} else if (oldActivity == 'none') {
+				} else if (oldActivity == 'none' && newActivity != 'none') {
 
 					setImage(res.data.currentEvent.activity);
 					setDuration(res.data.currentEvent.activity);
@@ -44,7 +44,7 @@ function update() {
 					$('#noEventDiv').hide();
 
 				// if we are trasitioning from something to nothing
-				} else if () {
+				} else if (newActivity == 'none' && oldActivity != 'none') {
 
 					setHiddenInput('none');
 
