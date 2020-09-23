@@ -21,6 +21,6 @@ function update() {
 	});
 }
 
-setTimeout(function() {
+setInterval(function() {
 	update();
 }, 1 * 1000);
