@@ -2,14 +2,16 @@
 <head>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 	<link rel="stylesheet" href="/stylesheets/style.css">
+	<script src="https://kit.fontawesome.com/9c5bd481b0.js" crossorigin="anonymous"></script>
 </head>
 <body>
 	<div class="container">
-		<div class="row text-center">
-			<div class="col-12">
+		<div class="row text-center h-100">
+			<div class="col-12 my-auto">
+				<h3>Current Task:</h3>
 				<img class="activity-img" src="/images/<%= data.currentEvent.activity %>.png">
-				<h1><%= data.currentEvent.activity %></h1>
-				<h3>for <%= data.duration %></h3>
+				<!-- <h1><%= data.currentEvent.activity %></h1> -->
+				<h3><i class="fas fa-stopwatch"></i> <%= data.duration %></h3>
 			</div>
 		</div>
 	</div>
