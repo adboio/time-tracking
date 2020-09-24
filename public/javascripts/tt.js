@@ -11,7 +11,7 @@ function setHiddenInput(activity) {
 }
 
 function setDuration(duration) {
-	$('#currentActivityDuration').text(duration);
+	$('#currentActivityDuration').text(duration.split(':').slice(0, 2).join(':'));
 }
 
 function setRandomBackground() {
@@ -112,4 +112,4 @@ $.ajax({
 
 setInterval(function() {
 	update();
-}, 1 * 1000);
+}, 30 * 1000);
