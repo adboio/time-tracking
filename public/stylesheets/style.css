@@ -1,5 +1,6 @@
 body {
 	background-color: #f9f9f9;
+	background-image: url('https://source.unsplash.com/random/1024x600') no-repeat fixed center;
 	font-family: 'Kufam', sans-serif;
 }
 
