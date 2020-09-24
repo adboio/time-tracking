@@ -43,7 +43,7 @@ function update() {
 				// if we are transitioning from nothing to something
 				} else if (oldActivity == 'none' && newActivity != 'none') {
 
-					setBackgroundColor();
+					// setBackgroundColor();
 
 					setImage(res.data.currentEvent.activity);
 					setDuration(res.data.duration);
@@ -65,7 +65,7 @@ function update() {
 			// if we are trasitioning from something to nothing
 			} else {
 
-				setRandomBackground();
+				// setRandomBackground();
 				setHiddenInput('none');
 
 				// hide & show divs
