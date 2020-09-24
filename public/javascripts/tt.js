@@ -15,11 +15,11 @@ function setDuration(duration) {
 }
 
 function setRandomBackground() {
-	$('body').css('background-image', "url('https://source.unsplash.com/random/1024x600') no-repeat fixed center");
+	$('body').css('background', "url('https://source.unsplash.com/random/1024x600') no-repeat center center fixed");
 }
 
 function setBackgroundColor() {
-	$('body').css('background-image', "none");
+	$('body').css('background', "#f9f9f9");
 }
 
 function update() {
