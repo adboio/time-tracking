@@ -14,6 +14,14 @@ function setDuration(duration) {
 	$('#currentActivityDuration').text(duration);
 }
 
+function setRandomBackground() {
+	$('body').css('background-image', "url('https://source.unsplash.com/random/1024x600') no-repeat fixed center");
+}
+
+function setBackgroundColor() {
+	$('body').css('background-image', "none");
+}
+
 function update() {
 	$.ajax({
 		url: '/update',
@@ -35,6 +43,8 @@ function update() {
 				// if we are transitioning from nothing to something
 				} else if (oldActivity == 'none' && newActivity != 'none') {
 
+					setBackgroundColor();
+
 					setImage(res.data.currentEvent.activity);
 					setDuration(res.data.duration);
 					setHiddenInput(res.data.currentEvent.activity);
@@ -55,6 +65,7 @@ function update() {
 			// if we are trasitioning from something to nothing
 			} else {
 
+				setRandomBackground();
 				setHiddenInput('none');
 
 				// hide & show divs
